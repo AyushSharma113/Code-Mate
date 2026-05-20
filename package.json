@@ -1,0 +1,11 @@
+{
+  "name": "code_mate",
+  "workspaces": ["packages/*"],
+  "scripts":{},
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  }
+}
