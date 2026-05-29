@@ -1,11 +1,8 @@
 {
-  "name": "code_mate",
+  "name": "codemate",
+  "version": "1.0.0",
   "workspaces": ["packages/*"],
-  "scripts":{},
-  "devDependencies": {
-    "@types/bun": "latest"
-  },
-  "peerDependencies": {
-    "typescript": "^5"
+   "scripts": {
+    "dev:cli": "bun run --watch package/cli/src/index.tsx"
   }
 }
