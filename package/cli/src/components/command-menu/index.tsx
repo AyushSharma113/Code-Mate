@@ -1,0 +1,57 @@
+import type {RefObject} from "react"
+import { TextAttributes, type ScrollBoxRenderable } from "@opentui/core"; // type for the scroll box
+import { COMMANDS } from "./commands";
+import { getFilteredCommands } from "./filter-commands";
+
+
+
+const MAX_VISIBLE_ITEMS = 8;
+
+
+// Align all command names in a fixed width column so their descriptions
+// starts at the same horizontal positions for a clean tabular look.
+// the width adjusts to accomodate the longest command name
+const COMMAND_COL_WIDTH = Math.max(...COMMANDS.map((cmd)=> cmd.name.length)) + 4;
+
+
+type CommandMenuProps = {
+    query: string,
+    selectedIndex: number,
+    scrollRef: RefObject<ScrollBoxRenderable | null>;
+    onSelect: (index: number) => void;
+    onExecute: (index: number) => void;
+}
+
+export function CommandMenu({
+    query,
+    selectedIndex,
+    scrollRef,
+    onSelect,
+    onExecute,
+}: CommandMenuProps) {
+    const filtered = getFilteredCommands(query);
+    const visibleHeight = Math.min(filtered.length, MAX_VISIBLE_ITEMS);
+
+
+    if (filtered.length === 0) {
+        return (
+            <box paddingX={1}>
+                <text attributes={TextAttributes.DIM}>
+                    No matching commands
+                </text>
+            </box>
+        )
+    }
+    
+
+    return (
+        <scrollbox>
+            
+        </scrollbox>
+    )
+    
+    
+}
+
+
+
