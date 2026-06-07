@@ -28,9 +28,9 @@ export function useCommandMenu(): UseCommandMenuReturn {
     const [textValue, setTextValue] = useState(""); // stores whatever the user types
     const [selectedIndex, setSelectedIndex] = useState(0); // tracks which command is highlighted
     const [showCommandMenu, setShowCommandMenu] = useState(false); // controls whether the command menu is visible
-    const scrollRef = useRef<ScrollBoxRenderable>(null); // referencce to <scollbox />
+    const scrollRef = useRef<ScrollBoxRenderable>(null); // reference to <scrollbox />
 
-    const commandQuery = showCommandMenu && textValue.startsWith("/") ? textValue.slice(1) : "";
+    const commandQuery = showCommandMenu && textValue.startsWith("/") ? textValue.slice(1) : ""; // gets the user query starts with this /
 
     const filteredCommands = useMemo(() => getFilteredCommands(commandQuery),[commandQuery]);
     
@@ -39,7 +39,7 @@ export function useCommandMenu(): UseCommandMenuReturn {
         setTextValue(text);
         setSelectedIndex(0)
 
-        // jumpp back to tthe top of the list when the user  types a new character 
+        // jump back to the top of the list when the user  types a new character 
         const scrollbox = scrollRef.current;
         if (scrollbox) {
             scrollbox.scrollTo(0);
