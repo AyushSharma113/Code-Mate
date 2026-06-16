@@ -12,6 +12,7 @@ import { getFilteredCommands } from "./filter-commands";
 import { useKeyboard } from "@opentui/react";
 
 
+// return type of this component 
 type UseCommandMenuReturn = {
     showCommandMenu: boolean;
     commandQuery: string;
