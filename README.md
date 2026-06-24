@@ -1,7 +1,3 @@
-
-# README.md
-
-````md
 # Claude Clone
 
 A modern AI assistant inspired by Claude, built with a powerful full-stack architecture. This project provides conversational AI, tool calling, memory management, and a clean user interface designed for productivity and everyday use.
@@ -110,22 +106,13 @@ claude-clone/
 ├── docs/
 │
 └── README.md
-````
 
----
-
-## ⚙️ Installation
-
-### Clone Repository
-
-```bash
+### ⚙️ Installation
+Clone Repository
 git clone https://github.com/yourusername/claude-clone.git
 cd claude-clone
-```
 
 ### Install Dependencies
-
-```bash
 # Frontend
 cd client
 npm install
@@ -133,15 +120,10 @@ npm install
 # Backend
 cd ../server
 npm install
-```
 
----
+###🔑 Environment Variables
 
-## 🔑 Environment Variables
-
-Create a `.env` file:
-
-```env
+Create a .env file:
 PORT=5000
 
 MONGODB_URI=
@@ -153,112 +135,34 @@ OPENAI_API_KEY=
 ANTHROPIC_API_KEY=
 
 OPENROUTER_API_KEY=
-```
 
----
-
-## ▶️ Running Locally
-
-### Start Backend
-
-```bash
+###▶️ Running Locally
 npm run dev
-```
 
-### Start Frontend
 
-```bash
-npm run dev
-```
+🧩 Future Features
+ Agentic workflows
+ MCP integration
+ Local LLM support
+ Multi-agent collaboration
+ Browser automation
+ Code interpreter
+ Plugin marketplace
+ Mobile app
 
-Open:
 
-```text
-http://localhost:3000
-```
-
----
-
-## 📸 Screenshots
-
-### Chat Interface
-
-Add screenshot here
-
-```md
-![Chat UI](./screenshots/chat.png)
-```
-
-### Settings
-
-```md
-![Settings](./screenshots/settings.png)
-```
-
----
-
-## 🧩 Future Features
-
-* [ ] Agentic workflows
-* [ ] MCP integration
-* [ ] Local LLM support
-* [ ] Multi-agent collaboration
-* [ ] Browser automation
-* [ ] Code interpreter
-* [ ] Plugin marketplace
-* [ ] Mobile app
-
----
-
-## 🤝 Contributing
-
-Contributions are welcome.
-
-1. Fork the repository
-2. Create a feature branch
-
-```bash
-git checkout -b feature/new-feature
-```
-
-3. Commit changes
-
-```bash
-git commit -m "Add new feature"
-```
-
-4. Push branch
-
-```bash
-git push origin feature/new-feature
-```
-
-5. Open a Pull Request
-
----
-
-## 📄 License
-
-This project is licensed under the MIT License.
-
----
-
-## ⭐ Support
+⭐ Support
 
 If you found this project useful:
 
-* Star the repository
-* Share it with others
-* Contribute improvements
+Star the repository
+Share it with others
+Contribute improvements
 
----
+👨‍💻 Author
 
-## 👨‍💻 Author
+Ayush Kumar Sharma
 
-**Ayush Kumar Sharma**
-
-GitHub: [https://github.com/yourusername](https://github.com/yourusername)
+GitHub: https://github.com/yourusername
 
 Built with ❤️ using modern AI technologies.
-
-```
