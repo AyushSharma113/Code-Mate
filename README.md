@@ -1,4 +1,4 @@
-# Claude Clone
+# Code Mate
 
 A modern AI assistant inspired by Claude, built with a powerful full-stack architecture. This project provides conversational AI, tool calling, memory management, and a clean user interface designed for productivity and everyday use.
 
