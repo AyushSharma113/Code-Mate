@@ -10,7 +10,7 @@ import { useMemo, useRef, useState, type RefObject } from "react";
 import type { Command } from "./types";
 import { getFilteredCommands } from "./filter-commands";
 import { useKeyboard } from "@opentui/react";
-import { useKeyboardLayer } from "../../providers/toast/keyboard-layer";
+import { useKeyboardLayer } from "../../providers/keyboard-layer";
 
 // return type of this component
 type UseCommandMenuReturn = {

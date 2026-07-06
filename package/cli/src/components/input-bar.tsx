@@ -8,7 +8,7 @@ import { useRenderer } from "@opentui/react";
 import type { Command } from "./command-menu/types";
 import { CommandMenu } from "./command-menu";
 import { useToast } from "../providers/toast";
-import { useKeyboardLayer } from "../providers/toast/keyboard-layer";
+import { useKeyboardLayer } from "../providers/keyboard-layer";
 
 type Props = {
   onSubmit: (text: string) => void;
