@@ -31,7 +31,7 @@ type DialogProviderTypes  = {
 }
 
 
-function DialogProvider({children}: DialogProviderTypes) {
+export function DialogProvider({children}: DialogProviderTypes) {
     const [currentDialog, setCurrentDialog] = useState<DialogConfig | null>(null)
 
     const {push,pop}= useKeyboardLayer();
@@ -41,7 +41,7 @@ function DialogProvider({children}: DialogProviderTypes) {
     const close  = useCallback(() => {
         setCurrentDialog(null);
 
-        pop("config")
+        pop("dialog")
     }, [pop])
     
     const open = useCallback((config: DialogConfig)=> {
@@ -112,7 +112,7 @@ function Dialog({currentDialog, close}: DialogProps) {
       <box
         width={Math.min(60, dimensions.width - 4)}
         height="auto"
-        // backgroundColor={colors.dialogSurface}
+        backgroundColor="black"
         paddingX={4}
         paddingY={1}
         flexDirection="column"
