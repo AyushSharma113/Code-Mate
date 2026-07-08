@@ -1,3 +1,5 @@
+/// <reference types="bun-types" />
+
 import { createContext, useCallback, useContext, useRef, useState, type ReactNode } from "react";
 import { DEFAULT_DURATION, type ToastOptions, type ToastVariant } from "./types";
 import { useTerminalDimensions } from "@opentui/react";
@@ -30,13 +32,13 @@ export type ToastProviderProps = {
 export function ToastProvider({children}: ToastProviderProps){
   const [currentToast, setCurrentToast] = useState<ToastOptions| null>(null);
 
-  //  holds a mutable reference of active settimeout id so it can persist across component re-renders without triggering them.
-  const timeoutHandleRef = useRef<NodeJS.Timeout | null>(null);
+  // holds a mutable reference of the active timeout so it can persist across re-renders.
+  const timeoutHandleRef = useRef<ReturnType<typeof globalThis.setTimeout> | null>(null);
 
-  // clears any existing timers to prevent overlappting notification from clashing
+  // clears any existing timers to prevent overlapping notifications from clashing.
   const clearCurrentTimeout = useCallback(() => {
-    if(timeoutHandleRef.current) {
-      clearCurrentTimeout(timeoutHandleRef.current);
+    if (timeoutHandleRef.current) {
+      globalThis.clearTimeout(timeoutHandleRef.current);
       timeoutHandleRef.current = null;
     }
   }, [])
@@ -52,9 +54,9 @@ export function ToastProvider({children}: ToastProviderProps){
       duration,
     })
 
-    timeoutHandleRef.current = setTimeout(() => {
+    timeoutHandleRef.current = globalThis.setTimeout(() => {
       setCurrentToast(null);
-    }, duration).unref();
+    }, duration);
   }, [clearCurrentTimeout])
 
 
