@@ -5,33 +5,31 @@ import { InputBar } from "./components/input-bar";
 import { ToastProvider } from "./providers/toast";
 import { KeyboardLayerProvider } from "./providers/keyboard-layer";
 import { DialogProvider } from "./providers/dialog";
+import { createMemoryRouter, RouterProvider } from "react-router";
+import { RootLayout } from "./layouts/root-layout";
+import { Session } from "./screens/session";
+import { NewSession } from "./screens/new-session";
+import { Home } from "./screens/home";
+
+
+
+const router = createMemoryRouter([
+  {
+    path: "/",
+    element: <RootLayout />,
+    children: [
+      { index: true, element: <Home /> },      // { path: "sessions/new", element: <NewSession /> },
+            { path: "sessions/new", element: <NewSession /> },
+      { path: "sessions/:id", element: <Session /> },
+    ]
+  }
+]);
 
 
 function App() {
   return (
-    <KeyboardLayerProvider>
-      <DialogProvider>
-
-    <ToastProvider>
-       <box
-          alignItems="center"
-          justifyContent="center"
-          backgroundColor="#0D0D12"
-          width="100%"
-          height="100%"
-          paddingX={2}
-          gap={2}
-          >
-          <Header />
-          <InputBar onSubmit={() => {}} />
-          <box></box>
-        </box>      
-      </ToastProvider>
-          </DialogProvider>
-    </KeyboardLayerProvider>
+    <RouterProvider router={router} />
   );
 }
-const renderer = await createCliRenderer(
-  {  targetFps: 60,  exitOnCtrlC: false,}
-);
+const renderer = await createCliRenderer({ targetFps: 60, exitOnCtrlC: false });
 createRoot(renderer).render(<App />);
