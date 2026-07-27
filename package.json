@@ -5,6 +5,7 @@
     "packages/*"
   ],
   "scripts": {
-    "dev:cli": "bun run --watch package/cli/src/index.tsx"
+    "dev:cli": "bun run --watch package/cli/src/index.tsx",
+    "build:cli": "bun run --filter @codemate/cli build"
   }
 }
