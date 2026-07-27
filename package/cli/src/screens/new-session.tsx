@@ -1,6 +1,30 @@
+import { useEffect } from "react";
+import { useNavigate, useLocation } from "react-router";
+import { BotMessage, ErrorMessage, UserMessage } from "../components/messages";
+import { SessionShell } from "../components/session-shell";
 
 export function NewSession() {
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const state = location.state as { message?: string } | null;
+  const message = state?.message?.trim();
+
+  useEffect(() => {
+    if (!message) {
+      navigate("/", { replace: true });
+    }
+  }, [message, navigate]);
+
+  if (!message) return null;
+
   return (
-    <text>this is text</text>
+    <SessionShell onSubmit={() => {}} inputDisabled loading={true}>
+      <UserMessage message={message} />
+      <BotMessage
+        content={`I received your request: ${message}`}
+        model="opus-4-6"
+      />
+    </SessionShell>
   );
-};
+}
