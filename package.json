@@ -2,10 +2,12 @@
   "name": "codemate",
   "version": "1.0.0",
   "workspaces": [
-    "packages/*"
+    "package/*"
   ],
   "scripts": {
     "dev:cli": "bun run --watch package/cli/src/index.tsx",
+    "dev:server": "bun run --hot package/server/src/index.ts",
+
     "build:cli": "bun run --filter @codemate/cli build"
   }
 }
