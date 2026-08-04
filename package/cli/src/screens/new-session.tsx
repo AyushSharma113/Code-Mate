@@ -2,6 +2,13 @@ import { useEffect } from "react";
 import { useNavigate, useLocation } from "react-router";
 import { BotMessage, ErrorMessage, UserMessage } from "../components/messages";
 import { SessionShell } from "../components/session-shell";
+// import type { InferResponseType } from "hono/client";
+// import type { apiClient } from "../lib/api-client";
+
+
+// type SessionData = InferResponseType<(typeof apiClient.sessions)[":id"]["$get"], 200>;
+
+
 
 export function NewSession() {
   const navigate = useNavigate();
