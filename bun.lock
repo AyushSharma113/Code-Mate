@@ -8,14 +8,19 @@
     "package/cli": {
       "name": "@nightcode/cli",
       "dependencies": {
+        "@codemate/shared": "workspace:*",
         "@opentui/core": "^0.1.97",
         "@opentui/react": "^0.1.97",
+        "hono": "^4.12.12",
         "opentui-spinner": "^0.0.6",
         "react": "^19.2.4",
         "react-router": "^8.3.0",
+        "zod": "^4.3.6",
       },
       "devDependencies": {
+        "@codemate/server": "workspace:*",
         "@types/bun": "latest",
+        "@types/node": "^26.1.2",
         "@types/react": "^19.2.14",
       },
       "peerDependencies": {
@@ -35,7 +40,7 @@
     "package/shared": {
       "name": "@codemate/shared",
       "dependencies": {
-        "zod": "^4.4.3",
+        "zod": "^4.3.6",
       },
     },
   },
