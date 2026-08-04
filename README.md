@@ -75,7 +75,7 @@ git checkout 07-tool-calling  # example: jump to tool calling
 ### 1. Clone and install
 
 ```bash
-git clone git@github.com:code-with-antonio/CodeMate.git
+git clone git@github.com:AyushSharma113/CodeMate.git
 cd CodeMate
 bun install
 ```
