@@ -32,7 +32,7 @@ const app = new Hono()
   .get("/", async (c) => {})
   .get("/:id", async (c) => {
     // MOCK: Uncomment to simulate slow session loading
-    // await new Promise((r) => setTimeout(r, 5000))
+    await new Promise((r) => setTimeout(r, 5000))
     // MOCK: Uncomment to simulate session loading error
     // throw new HTTPException(
     //   500,
